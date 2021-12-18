@@ -38,18 +38,18 @@ Memoryverse is a cards matching game, where the player tries to match all the ca
 #### Various Themes/Levels
 
 <a href="https://memoryverse.netlify.app/" target="_blank">
-  <img width="350px" src="./screenshots/12.jpg">
-  <img width="350px" src="./screenshots/11.jpg">
-  <img width="350px" src="./screenshots/10.jpg">
-  <img width="350px" src="./screenshots/9.jpg">
-  <img width="350px" src="./screenshots/8.jpg">
-  <img width="350px" src="./screenshots/7.jpg">
-  <img width="350px" src="./screenshots/6.jpg">
-  <img width="350px" src="./screenshots/5.jpg">
-  <img width="350px" src="./screenshots/4.jpg">
-  <img width="350px" src="./screenshots/3.jpg">
-  <img width="350px" src="./screenshots/2.jpg">
-  <img width="350px" src="./screenshots/1.jpg">
+  <img width="250px" src="./screenshots/12.jpg">
+  <img width="250px" src="./screenshots/11.jpg">
+  <img width="250px" src="./screenshots/10.jpg">
+  <img width="250px" src="./screenshots/9.jpg">
+  <img width="250px" src="./screenshots/8.jpg">
+  <img width="250px" src="./screenshots/7.jpg">
+  <img width="250px" src="./screenshots/6.jpg">
+  <img width="250px" src="./screenshots/5.jpg">
+  <img width="250px" src="./screenshots/4.jpg">
+  <img width="250px" src="./screenshots/3.jpg">
+  <img width="250px" src="./screenshots/2.jpg">
+  <img width="250px" src="./screenshots/1.jpg">
 </a>
 
 ## Author/Developer
