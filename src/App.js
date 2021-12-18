@@ -30,8 +30,12 @@ const themes = [
 
 function App() {
 	const [cards, setCards] = useState([]);
-	const [theme, setTheme] = useState(themes[0]);
+	const [level, setLevel] = useState(
+		localStorage.getItem("memoryverseLevel") || 0
+	);
+	const [theme, setTheme] = useState(themes[level]);
 	// const [turns, setTurns] = useState(0);
+
 	const [choiceOne, setChoiceOne] = useState(null);
 	const [choiceTwo, setChoiceTwo] = useState(null);
 	const [disabled, setDisabled] = useState(false);
@@ -70,7 +74,7 @@ function App() {
 				});
 				resetTurn();
 			} else {
-				setTimeout(() => resetTurn(), 800);
+				setTimeout(() => resetTurn(), 500);
 			}
 		}
 	}, [choiceOne, choiceTwo]);
@@ -83,6 +87,14 @@ function App() {
 		setDisabled(false);
 	};
 
+	const playNextLevel = () => {
+		shuffleCards();
+		const currentLevel = +localStorage.getItem("memoryverseLevel") || 0;
+		const nextLevel = (currentLevel + 1) % themes.length;
+		localStorage.setItem("memoryverseLevel", nextLevel);
+		setLevel(nextLevel);
+		setTheme(themes[nextLevel]);
+	};
 	// start new game automatically
 	useEffect(() => {
 		shuffleCards();
@@ -128,7 +140,7 @@ function App() {
 					<section className="playAgainSection">
 						<div className="playAgainDiv">
 							<p>Well Played!!</p>
-							<button onClick={shuffleCards}>Play Again</button>
+							<button onClick={playNextLevel}>Play Again</button>
 						</div>
 					</section>
 				)}
