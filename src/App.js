@@ -13,23 +13,43 @@ const cardImages = [
 ];
 
 const themes = [
+	{ name: "numbers", bgColor: "#0F1C25" },
+	{ name: "letters", bgColor: "#0F1C25" },
 	{ name: "shapes", bgColor: "#0F1C25" },
 	// { name: "fastfood", bgColor: "#3c56ad" },
 	// { name: "diamond", bgColor: "#0d1c26" },
-	// { name: "tree", bgColor: "#3a834f" },
+	{ name: "tree", bgColor: "#3a834f" },
 	// { name: "kingdom", bgColor: "#242329" },
 	// // { name: "war", bgColor: "#" },
 	// { name: "witchcraft", bgColor: "#520c7e" },
 	// { name: "war2", bgColor: "#261f1c" },
 	// // { name: "blob", bgColor: "#" },
 	// { name: "desert", bgColor: "#3a2f31" },
-	// { name: "fruit", bgColor: "#5d5d5d" },
-	// { name: "objects", bgColor: "#061428" },
+	{ name: "fruit", bgColor: "#5d5d5d" },
+	{ name: "objects", bgColor: "#061428" },
 	// { name: "ocean2", bgColor: "#332f2e" },
 	// // { name: "pets", bgColor: "#" },
 	// { name: "rings", bgColor: "#473a4c" },
 	// { name: "ocean", bgColor: "#352f33" },
 ];
+function sound(src) {
+	this.sound = document.createElement("audio");
+	this.sound.src = src;
+	this.sound.setAttribute("preload", "auto");
+	this.sound.setAttribute("controls", "none");
+	this.sound.style.display = "none";
+	this.sound.volume = 0.5;
+	document.body.appendChild(this.sound);
+	this.play = function () {
+		this.sound.play();
+	};
+	this.stop = function () {
+		this.sound.pause();
+	};
+}
+let winSound = new sound("/music/win.wav");
+let tapSound = new sound("/music/tap.wav");
+let matchSound = new sound("/music/match.wav");
 
 function App() {
 	const [cards, setCards] = useState([]);
@@ -55,6 +75,7 @@ function App() {
 
 	// handle a choice
 	const handleChoice = (card) => {
+		tapSound.play();
 		choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
 	};
 
@@ -64,6 +85,8 @@ function App() {
 			setDisabled(true);
 
 			if (choiceOne.src === choiceTwo.src) {
+				matchSound.stop();
+				matchSound.play();
 				setCards((prevCards) => {
 					return prevCards.map((card) => {
 						if (card.src === choiceOne.src) {
@@ -73,6 +96,7 @@ function App() {
 						}
 					});
 				});
+
 				resetTurn();
 			} else {
 				setTimeout(() => resetTurn(), 500);
@@ -100,9 +124,16 @@ function App() {
 	useEffect(() => {
 		shuffleCards();
 	}, []);
+
 	useEffect(() => {
 		document.body.style.backgroundColor = theme.bgColor;
 	}, [theme]);
+
+	useEffect(() => {
+		if (cards.length > 0 && cards.every((card) => card.matched)) {
+			winSound.play();
+		}
+	}, [cards]);
 
 	return (
 		<div className="App">
