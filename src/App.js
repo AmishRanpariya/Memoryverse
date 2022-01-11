@@ -11,21 +11,22 @@ const cardImages = [
 ];
 
 const themes = [
-	{ name: "fastfood", bgColor: "#3c56ad" },
-	{ name: "diamond", bgColor: "#0d1c26" },
-	{ name: "tree", bgColor: "#3a834f" },
-	{ name: "kingdom", bgColor: "#242329" },
-	// { name: "war", bgColor: "#" },
-	{ name: "witchcraft", bgColor: "#520c7e" },
-	{ name: "war2", bgColor: "#261f1c" },
-	// { name: "blob", bgColor: "#" },
-	{ name: "desert", bgColor: "#3a2f31" },
-	{ name: "fruit", bgColor: "#5d5d5d" },
-	{ name: "objects", bgColor: "#061428" },
-	{ name: "ocean2", bgColor: "#332f2e" },
-	// { name: "pets", bgColor: "#" },
-	{ name: "rings", bgColor: "#473a4c" },
-	{ name: "ocean", bgColor: "#352f33" },
+	{ name: "shapes", bgColor: "#0F1C25" },
+	// { name: "fastfood", bgColor: "#3c56ad" },
+	// { name: "diamond", bgColor: "#0d1c26" },
+	// { name: "tree", bgColor: "#3a834f" },
+	// { name: "kingdom", bgColor: "#242329" },
+	// // { name: "war", bgColor: "#" },
+	// { name: "witchcraft", bgColor: "#520c7e" },
+	// { name: "war2", bgColor: "#261f1c" },
+	// // { name: "blob", bgColor: "#" },
+	// { name: "desert", bgColor: "#3a2f31" },
+	// { name: "fruit", bgColor: "#5d5d5d" },
+	// { name: "objects", bgColor: "#061428" },
+	// { name: "ocean2", bgColor: "#332f2e" },
+	// // { name: "pets", bgColor: "#" },
+	// { name: "rings", bgColor: "#473a4c" },
+	// { name: "ocean", bgColor: "#352f33" },
 ];
 
 function App() {
