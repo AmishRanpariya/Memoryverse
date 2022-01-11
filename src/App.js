@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import SingleCard from "./components/SingleCard";
 
+const LOCAL_KEY = "memoryverseLevelForStudents";
+
 const cardImages = [
 	{ src: "/1.jpg", matched: false },
 	{ src: "/2.jpg", matched: false },
@@ -31,9 +33,7 @@ const themes = [
 
 function App() {
 	const [cards, setCards] = useState([]);
-	const [level, setLevel] = useState(
-		localStorage.getItem("memoryverseLevel") || 0
-	);
+	const [level, setLevel] = useState(localStorage.getItem(LOCAL_KEY) || 0);
 	const [theme, setTheme] = useState(themes[level]);
 	// const [turns, setTurns] = useState(0);
 
@@ -90,9 +90,9 @@ function App() {
 
 	const playNextLevel = () => {
 		shuffleCards();
-		const currentLevel = +localStorage.getItem("memoryverseLevel") || 0;
+		const currentLevel = +localStorage.getItem(LOCAL_KEY) || 0;
 		const nextLevel = (currentLevel + 1) % themes.length;
-		localStorage.setItem("memoryverseLevel", nextLevel);
+		localStorage.setItem(LOCAL_KEY, nextLevel);
 		setLevel(nextLevel);
 		setTheme(themes[nextLevel]);
 	};
