@@ -85,7 +85,6 @@ function App() {
 			setDisabled(true);
 
 			if (choiceOne.src === choiceTwo.src) {
-				matchSound.stop();
 				matchSound.play();
 				setCards((prevCards) => {
 					return prevCards.map((card) => {
