@@ -15,6 +15,7 @@ const cardImages = [
 const themes = [
 	{ name: "numbers", bgColor: "#0F1C25" },
 	{ name: "letters", bgColor: "#0F1C25" },
+	{ name: "gujLetter", bgColor: "#0F1C25" },
 	{ name: "shapes", bgColor: "#0F1C25" },
 	// { name: "fastfood", bgColor: "#3c56ad" },
 	// { name: "diamond", bgColor: "#0d1c26" },
